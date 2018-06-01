@@ -137,6 +137,13 @@
     "@babel/types" "7.0.0-beta.47"
     lodash "^4.17.5"
 
+"@babel/helper-module-imports@^7.0.0-beta.34":
+  version "7.0.0-beta.49"
+  resolved "http://registry.npm.taobao.org/@babel/helper-module-imports/download/@babel/helper-module-imports-7.0.0-beta.49.tgz#41d7d59891016c493432a46f7464446552890c75"
+  dependencies:
+    "@babel/types" "7.0.0-beta.49"
+    lodash "^4.17.5"
+
 "@babel/helper-module-transforms@7.0.0-beta.47":
   version "7.0.0-beta.47"
   resolved "http://registry.npm.taobao.org/@babel/helper-module-transforms/download/@babel/helper-module-transforms-7.0.0-beta.47.tgz#7eff91fc96873bd7b8d816698f1a69bbc01f3c38"
@@ -713,6 +720,14 @@
 "@babel/types@7.0.0-beta.47":
   version "7.0.0-beta.47"
   resolved "http://registry.npm.taobao.org/@babel/types/download/@babel/types-7.0.0-beta.47.tgz#e6fcc1a691459002c2671d558a586706dddaeef8"
+  dependencies:
+    esutils "^2.0.2"
+    lodash "^4.17.5"
+    to-fast-properties "^2.0.0"
+
+"@babel/types@7.0.0-beta.49":
+  version "7.0.0-beta.49"
+  resolved "http://registry.npm.taobao.org/@babel/types/download/@babel/types-7.0.0-beta.49.tgz#b7e3b1c3f4d4cfe11bdf8c89f1efd5e1617b87a6"
   dependencies:
     esutils "^2.0.2"
     lodash "^4.17.5"
@@ -1357,6 +1372,12 @@ babel-plugin-dynamic-import-node@^1.2.0:
   resolved "http://registry.npm.taobao.org/babel-plugin-dynamic-import-node/download/babel-plugin-dynamic-import-node-1.2.0.tgz#f91631e703e0595e47d4beafbb088576c87fbeee"
   dependencies:
     babel-plugin-syntax-dynamic-import "^6.18.0"
+
+babel-plugin-import@^1.7.0:
+  version "1.7.0"
+  resolved "http://registry.npm.taobao.org/babel-plugin-import/download/babel-plugin-import-1.7.0.tgz#7da886c26d46a048bc9ed126890fa7e419a6133d"
+  dependencies:
+    "@babel/helper-module-imports" "^7.0.0-beta.34"
 
 babel-plugin-syntax-dynamic-import@^6.18.0:
   version "6.18.0"
