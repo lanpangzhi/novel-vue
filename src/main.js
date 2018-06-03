@@ -4,7 +4,7 @@ import router from "./router/router";
 import store from "./store/store";
 import axios from "axios";
 /* eslint-disable */
-import { Loading, Tabbar, TabbarItem, NavBar, Icon, PullRefresh, Lazyload } from "vant";
+import { Loading, Tabbar, TabbarItem, NavBar, Icon, PullRefresh, Lazyload, Search } from "vant";
 
 Vue.use(Loading);
 Vue.use(Tabbar);
@@ -13,6 +13,7 @@ Vue.use(NavBar);
 Vue.use(Icon);
 Vue.use(Lazyload);
 Vue.use(PullRefresh);
+Vue.use(Search);
 
 Vue.config.productionTip = false;
 // 全局vue添加axios
