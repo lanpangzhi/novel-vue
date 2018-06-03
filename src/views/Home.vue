@@ -1,11 +1,11 @@
 <template>
   <div class="home">
     <!-- 头部 -->
-    <Header title="首页" :left="false"/>
+    <Header title="首页" :isLeft="false" :isRight="true"/>
     <!-- 头部 end -->
     <!-- 下拉刷新 -->
     <van-pull-refresh v-model="isLoading" @refresh="onRefresh">
-      <List :data="indexData" top="top" bottom="bottom"/>
+      <List :data="indexData"/>
     </van-pull-refresh>
     <!-- 下拉刷新 end -->
     <!--  导航 -->
@@ -60,3 +60,10 @@ export default {
   }
 };
 </script>
+
+<style scoped lang="scss">
+.van-pull-refresh {
+  padding-top: 46px;
+  padding-bottom: 50px;
+}
+</style>
