@@ -1,7 +1,8 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Home from "../views/Home.vue";
-import About from "../views/About.vue";
+import Search from "../views/Search.vue";
+import Ranking from "../views/Ranking.vue";
 
 Vue.use(Router);
 
@@ -11,12 +12,29 @@ export default new Router({
     {
       path: "/",
       name: "home",
-      component: Home
+      component: Home,
+      meta: {
+        index: 1,
+        keepAlive: true
+      }
     },
     {
-      path: "/about",
-      name: "about",
-      component: About
+      path: "/search",
+      name: "search",
+      component: Search,
+      meta: {
+        index: 2,
+        keepAlive: false
+      }
+    },
+    {
+      path: "/ranking",
+      name: "ranking",
+      component: Ranking,
+      meta: {
+        index: 3,
+        keepAlive: true
+      }
     }
   ]
 });

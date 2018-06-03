@@ -1,7 +1,10 @@
 <template>
-  <div id="app">
-    <transition name="slide-right">
-      <router-view/>
+  <div id="app"> 
+    <transition :name="transitionName">
+      <keep-alive v-if="$route.meta.keepAlive">
+        <router-view/>
+      </keep-alive>
+      <router-view v-if="!$route.meta.keepAlive"/>
     </transition>
   </div>
 </template>
@@ -60,17 +63,18 @@ export default {
   position: absolute;
   width: 100%;
   left: 0;
+  top: 0;
 }
 .slide-right-enter {
-  transform: translateX(-100%);
+  transform: translateX(-105%);
 }
 .slide-right-leave-active {
-  transform: translateX(100%);
+  transform: translateX(105%);
 }
 .slide-left-enter {
-  transform: translateX(100%);
+  transform: translateX(105%);
 }
 .slide-left-leave-active {
-  transform: translateX(-100%);
+  transform: translateX(-105%);
 }
 </style>
