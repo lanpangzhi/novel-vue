@@ -1,5 +1,5 @@
 <template>
-    <van-nav-bar :title="tit" :z-index="99999"  :left-arrow="left" fixed @click-left="onClickLeft" @click-right="onClickRight">
+    <van-nav-bar :title="tit" :z-index="2000"  :left-arrow="left" fixed @click-left="onClickLeft" @click-right="onClickRight">
         <van-icon name="search" slot="right" v-if="right"/>
     </van-nav-bar>
 </template>
