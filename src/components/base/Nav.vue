@@ -43,8 +43,9 @@ export default {
       let arr = this.data.filter(el => {
         return el.path === from.path;
       });
-
-      this.change(arr[0].n);
+      if (arr.length >= 1) {
+        this.change(arr[0].n);
+      }
     }
   },
   methods: {
