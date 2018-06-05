@@ -3,6 +3,8 @@ import Router from "vue-router";
 import Home from "../views/Home.vue";
 import Search from "../views/Search.vue";
 import Ranking from "../views/Ranking.vue";
+import Detail from "../views/Detail.vue";
+import Chapter from "../views/Chapter.vue";
 
 Vue.use(Router);
 
@@ -33,6 +35,24 @@ export default new Router({
       component: Ranking,
       meta: {
         index: 3,
+        keepAlive: true
+      }
+    },
+    {
+      path: "/detail/:id",
+      name: "detail",
+      component: Detail,
+      meta: {
+        index: 4,
+        keepAlive: true
+      }
+    },
+    {
+      path: "/chapter",
+      name: "chapter",
+      component: Chapter,
+      meta: {
+        index: 5,
         keepAlive: true
       }
     }
