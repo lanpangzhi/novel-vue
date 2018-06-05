@@ -3449,6 +3449,10 @@ growl@1.10.5:
   version "1.10.5"
   resolved "http://registry.npm.taobao.org/growl/download/growl-1.10.5.tgz#f2735dc2283674fa67478b10181059355c369e5e"
 
+hammerjs@^2.0.6:
+  version "2.0.8"
+  resolved "http://registry.npm.taobao.org/hammerjs/download/hammerjs-2.0.8.tgz#04ef77862cff2bb79d30f7692095930222bf60f1"
+
 handle-thing@^1.2.5:
   version "1.2.5"
   resolved "http://registry.npm.taobao.org/handle-thing/download/handle-thing-1.2.5.tgz#fd7aad726bf1a5fd16dfc29b2f7a6601d27139c4"
@@ -7195,6 +7199,12 @@ vue-template-compiler@^2.5.16:
 vue-template-es2015-compiler@^1.6.0:
   version "1.6.0"
   resolved "http://registry.npm.taobao.org/vue-template-es2015-compiler/download/vue-template-es2015-compiler-1.6.0.tgz#dc42697133302ce3017524356a6c61b7b69b4a18"
+
+vue-touch@^1.1.0:
+  version "1.1.0"
+  resolved "http://registry.npm.taobao.org/vue-touch/download/vue-touch-1.1.0.tgz#f69da3b4bf033f3f7bcf5864011a6b4d4bb596b9"
+  dependencies:
+    hammerjs "^2.0.6"
 
 vue@^2.5.16:
   version "2.5.16"
