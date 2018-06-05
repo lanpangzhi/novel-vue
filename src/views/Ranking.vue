@@ -3,7 +3,11 @@
     <!-- 头部 -->
     <Header title="排行榜" :isLeft="true" :isRight="true"/>
     <!-- 头部 end -->
-    <van-tabs v-model="active" type="card" @click="changeTab">
+    <!-- 加载动画 -->
+    <Loading v-if="isLoading"/>
+    <!-- 加载动画 end -->
+    <!-- 选项卡 -->
+    <van-tabs v-model="active" type="card" @click="changeTab"  v-if="!isLoading">
       <van-tab v-for="(item, n) in rankingTitle" :title="item.name" :key="n">
          <van-tabs @click="tabClick">
             <van-tab v-for="(index, n2) in rankingData[item.id]" :key="n2">
@@ -15,6 +19,7 @@
          </van-tabs>
       </van-tab>
     </van-tabs>
+    <!-- 选项卡 end -->
     <!-- 导航 -->
     <Nav/>
     <!-- 导航 end -->
@@ -24,6 +29,7 @@
 <script>
 import Header from "@/components/base/Header.vue";
 import Nav from "@/components/base/Nav.vue";
+import Loading from "@/components/base/Loading.vue";
 import List from "@/components/List.vue";
 import { Toast } from "vant";
 
@@ -32,11 +38,13 @@ export default {
   components: {
     Header,
     Nav,
-    List
+    List,
+    Loading
   },
   data() {
     return {
       active: 0,
+      isLoading: true,
       rankingTitle: [
         {
           name: "男生",
@@ -127,6 +135,9 @@ export default {
           Toast(data.msg);
         }
       }
+      setTimeout(() => {
+        this.isLoading = false;
+      }, 300);
     }
   }
 };
@@ -134,6 +145,9 @@ export default {
 
 <style scoped lang="scss">
 .ranking {
+  .van-loading {
+    margin-top: 56px;
+  }
   .van-tabs {
     margin-top: 56px;
     .van-tabs {
