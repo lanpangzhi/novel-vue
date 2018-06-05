@@ -1,6 +1,6 @@
 <template>
   <ul id="list" :class="{ 'top': isTop, 'bottom': isBottom }">
-    <li v-for="item in data" :key="item._id">
+    <router-link v-for="item in data" :key="item._id" :to="{name: 'detail', params: {id: item._id}}" tag="li">
        <div class="list-pic">
          <img  v-lazy="item.cover"/>
        </div>
@@ -10,7 +10,7 @@
          <p class="list-des">{{ item.shortIntro }}</p>
          <i class="list-label" v-if="item.minorCate">{{ item.minorCate }}</i>
        </div>
-    </li>
+    </router-link>
   </ul>
 </template>
 
@@ -97,7 +97,7 @@ export default {
       position: absolute;
       z-index: 8;
       right: 0px;
-      top: 10px;
+      top: 28px;
       padding: 5px;
       font-size: 12px;
       font-style: normal;
@@ -111,6 +111,6 @@ export default {
   padding-top: 46px;
 }
 .bottom {
-  padding-top: 50px;
+  padding-bottom: 50px;
 }
 </style>
