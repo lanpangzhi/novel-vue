@@ -1,13 +1,13 @@
 import Vue from "vue";
 import App from "./App.vue";
 import router from "./router/router";
-import store from "./store/store";
+import store from "./store/";
 import axios from "axios";
 import VueTouch from "vue-touch";
 /* eslint-disable */
 import { Loading, Tabbar, TabbarItem, NavBar, Icon, PullRefresh, Lazyload, Search, Tab, Tabs, Button } from "vant";
 
-Vue.use(VueTouch);
+Vue.use(VueTouch, { name: 'v-touch' });
 Vue.use(Loading);
 Vue.use(Tabbar);
 Vue.use(TabbarItem);
