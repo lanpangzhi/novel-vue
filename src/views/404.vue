@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import { Dialog } from 'vant';
+import { Dialog } from "vant";
 
 export default {
   name: "404",
