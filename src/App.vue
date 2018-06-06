@@ -52,22 +52,22 @@ export default {
 .slide-left-leave-active {
   will-change: transform;
   transition: all 0.5s;
-  transform: translateZ(0);
+  transform: translateZ(0, 0, 0, 0.00001);
   position: absolute;
   width: 100%;
   left: 0;
   top: 0;
 }
 .slide-right-enter {
-  transform: translateX(-105%);
+  transform: translateX(-100%);
 }
 .slide-right-leave-active {
-  transform: translateX(105%);
+  transform: translateX(100%);
 }
 .slide-left-enter {
-  transform: translateX(105%);
+  transform: translateX(100%);
 }
 .slide-left-leave-active {
-  transform: translateX(-105%);
+  transform: translateX(-100%);
 }
 </style>
