@@ -1,7 +1,3 @@
-<template>
-  
-</template>
-
 <script>
 import { Dialog } from "vant";
 
@@ -19,5 +15,5 @@ export default {
       });
     }
   }
-}
+};
 </script>
