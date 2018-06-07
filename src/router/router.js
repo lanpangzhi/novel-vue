@@ -62,7 +62,7 @@ export default new Router({
       component: () => import("../views/Article.vue"),
       meta: {
         index: 6,
-        keepAlive: true
+        keepAlive: false
       }
     },
     {
