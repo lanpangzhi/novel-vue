@@ -1,20 +1,20 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Home from "../views/Home.vue";
-import Search from "../views/Search.vue";
-import Ranking from "../views/Ranking.vue";
-import Detail from "../views/Detail.vue";
-import Chapter from "../views/Chapter.vue";
 
 Vue.use(Router);
 
 export default new Router({
   mode: "history",
+  scrollBehavior(to) {
+    if (to.path === "/article") {
+      return { x: 0, y: 0 };
+    }
+  },
   routes: [
     {
       path: "/",
       name: "home",
-      component: Home,
+      component: () => import("../views/Home.vue"),
       meta: {
         index: 1,
         keepAlive: true
@@ -23,7 +23,7 @@ export default new Router({
     {
       path: "/search",
       name: "search",
-      component: Search,
+      component: () => import("../views/Search.vue"),
       meta: {
         index: 2,
         keepAlive: false
@@ -32,7 +32,7 @@ export default new Router({
     {
       path: "/ranking",
       name: "ranking",
-      component: Ranking,
+      component: () => import("../views/Ranking.vue"),
       meta: {
         index: 3,
         keepAlive: true
@@ -41,7 +41,7 @@ export default new Router({
     {
       path: "/detail/:id",
       name: "detail",
-      component: Detail,
+      component: () => import("../views/Detail.vue"),
       meta: {
         index: 4,
         keepAlive: true
@@ -50,9 +50,27 @@ export default new Router({
     {
       path: "/chapter",
       name: "chapter",
-      component: Chapter,
+      component: () => import("../views/Chapter.vue"),
       meta: {
         index: 5,
+        keepAlive: true
+      }
+    },
+    {
+      path: "/article",
+      name: "article",
+      component: () => import("../views/Article.vue"),
+      meta: {
+        index: 6,
+        keepAlive: true
+      }
+    },
+    {
+      path: "*",
+      name: "404",
+      component: () => import("../views/404.vue"),
+      meta: {
+        index: 7,
         keepAlive: true
       }
     }
