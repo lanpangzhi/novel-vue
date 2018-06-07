@@ -54,7 +54,8 @@ export default {
   },
   computed: mapState({
     id: "id",
-    sourceId: "sourceId"
+    sourceId: "sourceId",
+    list: "list"
   }),
   created() {
     this.getDetail();
@@ -90,18 +91,49 @@ export default {
         this.isLoading = false;
       }, 300);
     },
+    async getChapter() {
+      let data = await this.axios.get("/chapter", {
+        params: {
+          id: this.source._id
+        }
+      });
+
+      if (data.flag === 0) {
+        Toast.clear();
+        Toast(data.msg);
+        return;
+      }
+
+      this.upList({
+        id: data.id,
+        chapters: data.chapters
+      });
+      this.upN(0);
+      Toast.clear();
+      this.$router.push("/article");
+    },
     ...mapMutations({
       upId: "updateId",
       upSourceId: "updateSourceId",
-      upTit: "updateTit"
+      upTit: "updateTit",
+      upList: "updateList",
+      upN: "updateN"
     }),
     toChapter() {
       this.setState();
       this.$router.push("/chapter");
     },
     toArticle() {
-      alert("commit vuex toArticle");
       this.setState();
+      if (!this.list.chapters || this.list.id !== this.source._id) {
+        Toast.loading({
+          mask: true,
+          message: "加载中..."
+        });
+        this.getChapter();
+      } else {
+        this.$router.push("/article");
+      }
     },
     setState() {
       this.upId(this.book._id);
