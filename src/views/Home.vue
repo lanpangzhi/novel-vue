@@ -4,7 +4,8 @@
     <Header title="首页" :isLeft="false" :isRight="true"/>
     <!-- 头部 end -->
     <!-- 下拉刷新 -->
-    <van-pull-refresh v-model="isLoading" @refresh="onRefresh">
+    <Loading v-if="isLoad"/>
+    <van-pull-refresh v-if="!isLoad" v-model="isLoading" @refresh="onRefresh">
       <List :data="indexData"/>
     </van-pull-refresh>
     <!-- 下拉刷新 end -->
@@ -33,7 +34,8 @@ export default {
   data() {
     return {
       indexData: [],
-      isLoading: false
+      isLoading: false,
+      isLoad: true
     };
   },
   created() {
@@ -56,6 +58,7 @@ export default {
       } else {
         Toast.fail(data.msg);
       }
+      this.isLoad = false;
     }
   }
 };
