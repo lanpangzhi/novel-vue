@@ -6,7 +6,7 @@ Vue.use(Router);
 export default new Router({
   mode: "history",
   scrollBehavior(to) {
-    if (to.path === "/article") {
+    if (to.path === "/article" || to.path === "/ranking") {
       return { x: 0, y: 0 };
     }
   },
