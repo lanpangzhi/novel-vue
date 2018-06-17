@@ -45,7 +45,9 @@ export default {
   computed: {
     ...mapState({
       list: "list",
-      n: "n"
+      n: "n",
+      sourceId: "sourceId",
+      listN: "listN"
     })
   },
   watch: {
@@ -59,7 +61,8 @@ export default {
   },
   methods: {
     ...mapMutations({
-      upN: "updateN"
+      upN: "updateN",
+      upListN: "updateListN"
     }),
     async getArticle() {
       if (this.off) {
@@ -92,7 +95,11 @@ export default {
       if (this.chapterlist.length <= 0) {
         this.chapterlist = this.list.chapters;
       }
-      this.currentN = this.n;
+      if (this.listN && this.listN[this.sourceId] > 0) {
+        this.currentN = this.listN[this.sourceId];
+      } else {
+        this.currentN = 0;
+      }
       if (this.n >= this.list.chapters.length - 1) {
         this.isNext = true;
       } else {
@@ -118,6 +125,9 @@ export default {
       }
       let n = this.currentN;
       n++;
+      this.upListN({
+        [this.sourceId]: n
+      });
       this.upN(n);
     },
     prev() {
@@ -126,6 +136,9 @@ export default {
       }
       let n = this.currentN;
       n--;
+      this.upListN({
+        [this.sourceId]: n
+      });
       this.upN(n);
     }
   }

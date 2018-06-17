@@ -25,7 +25,8 @@ const state = local.get() || {
   sourceId: "",
   title: "",
   list: {},
-  n: 0
+  n: 0,
+  listN: {}
 };
 
 let mutations = {
@@ -47,6 +48,10 @@ let mutations = {
   },
   updateTit(state, tit) {
     state.title = tit;
+    local.set(state);
+  },
+  updateListN(state, listN) {
+    state.listN = { ...state.listN, ...listN };
     local.set(state);
   }
 };
