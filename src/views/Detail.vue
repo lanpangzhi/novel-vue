@@ -120,6 +120,10 @@ export default {
       upN: "updateN"
     }),
     toChapter() {
+      Toast.loading({
+        mask: true,
+        message: "加载中..."
+      });
       this.setState();
       this.$router.push("/chapter");
     },
@@ -139,6 +143,9 @@ export default {
       this.upId(this.book._id);
       this.upTit(this.book.title);
       this.upSourceId(this.source._id);
+      setTimeout(() => {
+        Toast.clear();
+      }, 300);
     }
   }
 };
