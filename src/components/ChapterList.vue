@@ -24,7 +24,8 @@ export default {
   },
   computed: {
     ...mapState({
-      list: "list"
+      list: "list",
+      sourceId: "sourceId"
     })
   },
   watch: {
@@ -37,10 +38,14 @@ export default {
   },
   methods: {
     ...mapMutations({
-      upN: "updateN"
+      upN: "updateN",
+      upListN: "updateListN"
     }),
     toArticle(index) {
       let n = index;
+      this.upListN({
+        [this.sourceId]: n
+      });
       this.upN(n);
       this.$router.push("/article");
     },
