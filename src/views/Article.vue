@@ -114,7 +114,7 @@ export default {
     },
     toHtml(str) {
       // eslint-disable-next-line
-      let re = new RegExp("([^\x00-\xff])+\n", "g");
+      let re = new RegExp("([^\n])+\n", "g");
       return str.replace(re, $1 => {
         return `<p>${$1}</p>`;
       });
