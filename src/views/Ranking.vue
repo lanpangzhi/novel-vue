@@ -21,7 +21,7 @@
     </van-tabs>
     <!-- 选项卡 end -->
     <!-- 导航 -->
-    <Nav/>
+    <Nav />
     <!-- 导航 end -->
   </div>
 </template>
@@ -145,6 +145,7 @@ export default {
 
 <style scoped lang="scss">
 .ranking {
+  min-height: 100%;
   .van-loading {
     margin-top: 56px;
   }
