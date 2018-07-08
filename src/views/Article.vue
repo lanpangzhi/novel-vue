@@ -100,15 +100,29 @@ export default {
       } else {
         this.currentN = 0;
       }
-      if (this.n >= this.list.chapters.length - 1) {
-        this.isNext = true;
+
+      if (this.n === 0 && this.listN[this.sourceId] > 0) {
+        if (this.listN[this.sourceId] >= this.list.chapters.length - 1) {
+          this.isNext = true;
+        } else {
+          this.isNext = false;
+        }
+        if (this.listN[this.sourceId] <= 0) {
+          this.isPrev = true;
+        } else {
+          this.isPrev = false;
+        }
       } else {
-        this.isNext = false;
-      }
-      if (this.n <= 0) {
-        this.isPrev = true;
-      } else {
-        this.isPrev = false;
+        if (this.n >= this.list.chapters.length - 1) {
+          this.isNext = true;
+        } else {
+          this.isNext = false;
+        }
+        if (this.n <= 0) {
+          this.isPrev = true;
+        } else {
+          this.isPrev = false;
+        }
       }
       this.getArticle();
     },
