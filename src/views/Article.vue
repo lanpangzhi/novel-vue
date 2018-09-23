@@ -2,8 +2,10 @@
   <div class="article">
      <Header :title="tit" :isLeft="true"/>
      <div class="article-wrap">
-       <Loading v-if="isLoading"/>
-       <ArticleCon :data="article" v-if="!isLoading"/>
+       <Loading v-show="isLoading"/>
+       <v-touch @swipeleft="next"  @swiperight="prev" :swipe-options="{direction: 'horizontal'}">
+        <ArticleCon :data="article" v-show="!isLoading"/>
+       </v-touch>
      </div>
      <div v-if="!isLoading" class="article-btn">
        <v-touch tag="a" @tap="prev" class="article-prev" :class="{ disabled: isPrev }">上一页</v-touch>
@@ -81,15 +83,14 @@ export default {
         Toast(data.msg);
         this.tit = "出错了...";
         this.article = "";
-        this.isLoading = false;
       } else {
         this.tit = title;
         this.article = this.toHtml(data.chapter.body);
-        this.isLoading = false;
       }
       setTimeout(() => {
         this.off = false;
-      }, 300);
+        this.isLoading = false;
+      }, 500);
     },
     pageInit() {
       if (this.chapterlist.length <= 0) {
