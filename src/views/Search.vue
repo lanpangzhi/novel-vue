@@ -71,6 +71,9 @@ export default {
         this.searchData = data.books;
       }
     }
+  },
+  deactivated() {
+    this.$destroy()
   }
 };
 </script>
