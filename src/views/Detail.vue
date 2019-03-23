@@ -60,6 +60,9 @@ export default {
   created() {
     this.getDetail();
   },
+  deactivated() {
+    this.$destroy();
+  },
   methods: {
     async getDetail() {
       if (this.isOff) {
@@ -109,7 +112,9 @@ export default {
         chapters: data.chapters
       });
       this.upN(0);
-      Toast.clear();
+      this.$nextTick(() => {
+        Toast.clear();
+      });
       this.$router.push("/article");
     },
     ...mapMutations({

@@ -73,7 +73,7 @@ export default {
     }
   },
   deactivated() {
-    this.$destroy()
+    this.$destroy();
   }
 };
 </script>
