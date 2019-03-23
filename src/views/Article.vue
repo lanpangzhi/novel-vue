@@ -52,6 +52,9 @@ export default {
       listN: "listN"
     })
   },
+  deactivated() {
+    this.$destroy();
+  },
   watch: {
     n() {
       this.isLoading = true;
