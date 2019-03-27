@@ -9,7 +9,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.van-loading--black {
+.van-loading {
   padding: 10px;
   border-radius: 5px;
   margin: auto;

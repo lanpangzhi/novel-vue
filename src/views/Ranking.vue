@@ -9,7 +9,7 @@
     <!-- 选项卡 -->
     <van-tabs v-model="active" type="card" @click="changeTab"  v-if="!isLoading">
       <van-tab v-for="(item, n) in rankingTitle" :title="item.name" :key="n">
-         <van-tabs @click="tabClick">
+         <van-tabs @click="tabClick" id="ranking-tab">
             <van-tab v-for="(index, n2) in rankingData[item.id]" :key="n2">
               <div slot="title" class="title">
                 {{ index.shortTitle }}
@@ -142,6 +142,12 @@ export default {
   }
 };
 </script>
+<style lang="scss">
+.van-tabs--line .van-tabs__wrap {
+  height: 32px;
+}
+</style>
+
 
 <style scoped lang="scss">
 .ranking {

@@ -1,5 +1,5 @@
 <template>
-    <van-tabbar v-model="active" @change="change">
+    <van-tabbar :z-index="2000" v-model="active" @change="change">
       <van-tabbar-item v-for="item in data" :icon="item.icon" :to="item.path" :key="item.name">{{ item.name }}</van-tabbar-item>
     </van-tabbar>
 </template>
@@ -14,7 +14,7 @@ export default {
         {
           name: "首页",
           path: "/",
-          icon: "home",
+          icon: "wap-home",
           n: 0
         },
         {
