@@ -1,5 +1,5 @@
 <template>
-  <div class="skeleton-wrapper" id="skeleton1">
+  <div class="skeleton-wrapper" id="skeleton1" style="display:none">
     <!-- 骨架图代码 -->
       <!-- eslint-disable vue/max-len -->
       <header class="skeleton-header"></header>
@@ -22,7 +22,7 @@ export default {
 
 <style scoped>
 .skeleton-header {
-  height: 52px;
+  height: 46px;
   /* background: blue; */
 }
 

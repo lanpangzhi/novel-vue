@@ -1,7 +1,7 @@
 <template>
-    <van-nav-bar :title="title" :z-index="2000"  :left-arrow="isLeft" fixed @click-left="onClickLeft" @click-right="onClickRight">
-        <van-icon name="search" slot="right" v-if="isRight"/>
-    </van-nav-bar>
+  <van-nav-bar :title="title" :z-index="2000"  :left-arrow="isLeft" fixed @click-left="onClickLeft" @click-right="onClickRight">
+    <van-icon name="search" slot="right" v-if="isRight"/>
+  </van-nav-bar>
 </template>
 
 <script>
